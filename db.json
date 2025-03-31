@@ -1,0 +1,69 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "email": "admin@example.com",
+      "password": "123456"
+    },
+    {
+      "id": "0e94",
+      "email": "123@123",
+      "password": "123"
+    },
+    {
+      "id": "3ebf",
+      "email": "123@123",
+      "password": "123"
+    },
+    {
+      "id": "44b5",
+      "email": "123@123",
+      "password": "123"
+    },
+    {
+      "id": "15e4",
+      "email": "123@123",
+      "password": "123"
+    },
+    {
+      "id": "c769",
+      "email": "123@123",
+      "password": "123"
+    },
+    {
+      "id": "e1ad",
+      "email": "123@123",
+      "password": "123"
+    },
+    {
+      "id": "0ce9",
+      "email": "123@123",
+      "password": "123"
+    },
+    {
+      "id": "86ec",
+      "email": "123@123",
+      "password": "123"
+    },
+    {
+      "id": "a6c6",
+      "email": "",
+      "password": ""
+    },
+    {
+      "id": "bafb",
+      "email": "bigsemus@gmail.com",
+      "password": "123"
+    },
+    {
+      "id": "674c",
+      "email": "222@222",
+      "password": "222"
+    },
+    {
+      "id": "5659",
+      "email": "bigsemus@gmail.com",
+      "password": "123"
+    }
+  ]
+}
