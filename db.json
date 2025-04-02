@@ -1,69 +1,258 @@
-{
-  "users": [
-    {
-      "id": "1",
-      "email": "admin@example.com",
-      "password": "123456"
-    },
-    {
-      "id": "0e94",
-      "email": "123@123",
-      "password": "123"
-    },
-    {
-      "id": "3ebf",
-      "email": "123@123",
-      "password": "123"
-    },
-    {
-      "id": "44b5",
-      "email": "123@123",
-      "password": "123"
-    },
-    {
-      "id": "15e4",
-      "email": "123@123",
-      "password": "123"
-    },
-    {
-      "id": "c769",
-      "email": "123@123",
-      "password": "123"
-    },
-    {
-      "id": "e1ad",
-      "email": "123@123",
-      "password": "123"
-    },
-    {
-      "id": "0ce9",
-      "email": "123@123",
-      "password": "123"
-    },
-    {
-      "id": "86ec",
-      "email": "123@123",
-      "password": "123"
-    },
-    {
-      "id": "a6c6",
-      "email": "",
-      "password": ""
-    },
-    {
-      "id": "bafb",
-      "email": "bigsemus@gmail.com",
-      "password": "123"
-    },
-    {
-      "id": "674c",
-      "email": "222@222",
-      "password": "222"
-    },
-    {
-      "id": "5659",
-      "email": "bigsemus@gmail.com",
-      "password": "123"
-    }
-  ]
-}
+[
+  {
+    "id": "8421",
+    "name": "Colombo",
+    "email": "colombo@example.com",
+    "password": "123456",
+    "currencies": [
+      {
+        "currency": "Eur",
+        "count": 233
+      },
+      {
+        "currency": "Usd",
+        "count": 100
+      },
+      {
+        "currency": "Peco",
+        "count": 45
+      },
+      {
+        "currency": "Eur",
+        "count": 233
+      },
+      {
+        "currency": "Usd",
+        "count": 100
+      },
+      {
+        "currency": "Peco",
+        "count": 45
+      }
+    ],
+    "children": [
+      {
+        "id": "1608",
+        "name": "Colombo2",
+        "email": "colombo2@example.com",
+        "password": "123456",
+        "currencies": [
+          {
+            "currency": "Usd",
+            "count": 100
+          },
+          {
+            "currency": "Peco",
+            "count": 45
+          }
+        ],
+        "children": [
+          {
+            "id": "437c",
+            "name": "Solomon",
+            "email": "solomon@example.com",
+            "password": "123456",
+            "currencies": [
+              {
+                "currency": "Eur",
+                "count": 233
+              },
+              {
+                "currency": "Usd",
+                "count": 100
+              },
+              {
+                "currency": "Peco",
+                "count": 45
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "id": "a35c",
+        "name": "Colombo 3",
+        "email": "colombo3@example.com",
+        "password": "123456",
+        "currencies": [
+          {
+            "currency": "Eur",
+            "count": 45
+          },
+          {
+            "currency": "Yen",
+            "count": 45
+          },
+          {
+            "currency": "Peco",
+            "count": 45
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "c063",
+    "name": "Moissey",
+    "email": "moissey@example.com",
+    "password": "123456",
+    "currencies": [
+      {
+        "currency": "Eur",
+        "count": 233
+      },
+      {
+        "currency": "Usd",
+        "count": 100
+      },
+      {
+        "currency": "Peco",
+        "count": 45
+      }
+    ]
+  },
+  {
+    "id": "cde2",
+    "name": "Atlantis",
+    "email": "atlantis@example.com",
+    "password": "123456",
+    "currencies": [
+      {
+        "currency": "Eur",
+        "count": 233
+      },
+      {
+        "currency": "Usd",
+        "count": 100
+      }
+    ],
+    "children": [
+      {
+        "id": "f0c3",
+        "name": "Zone A",
+        "email": "zonea@example.com",
+        "password": "123456",
+        "currencies": [
+          {
+            "currency": "Peco",
+            "count": 45
+          }
+        ],
+        "children": [
+          {
+            "id": "19b3",
+            "name": "Sector 9",
+            "email": "sector9@example.com",
+            "password": "123456",
+            "currencies": [
+              {
+                "currency": "Eur",
+                "count": 233
+              },
+              {
+                "currency": "Usd",
+                "count": 100
+              },
+              {
+                "currency": "Peco",
+                "count": 45
+              }
+            ],
+            "children": [
+              {
+                "id": "9906",
+                "name": "Unit X",
+                "email": "unitx@example.com",
+                "password": "123456",
+                "currencies": [
+                  {
+                    "currency": "BTC",
+                    "count": 9
+                  },
+                  {
+                    "currency": "ETH",
+                    "count": 7
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "3b92",
+    "name": "New Terra",
+    "email": "newterra@example.com",
+    "password": "123456",
+    "currencies": [
+      {
+        "currency": "Eur",
+        "count": 233
+      },
+      {
+        "currency": "Usd",
+        "count": 100
+      },
+      {
+        "currency": "Peco",
+        "count": 45
+      }
+    ],
+    "children": [
+      {
+        "id": "4458",
+        "name": "Region B",
+        "email": "regionb@example.com",
+        "password": "123456",
+        "currencies": [
+          {
+            "currency": "Eur",
+            "count": 233
+          },
+          {
+            "currency": "Usd",
+            "count": 100
+          },
+          {
+            "currency": "Peco",
+            "count": 45
+          }
+        ],
+        "children": [
+          {
+            "id": "9df9",
+            "name": "Village 12",
+            "email": "village12@example.com",
+            "password": "123456",
+            "currencies": [
+              {
+                "currency": "Eur",
+                "count": 233
+              }
+            ],
+            "children": [
+              {
+                "id": "e1ea",
+                "name": "House 4",
+                "email": "house4@example.com",
+                "password": "123456",
+                "currencies": [
+                  {
+                    "currency": "USD",
+                    "count": 3
+                  },
+                  {
+                    "currency": "CAD",
+                    "count": 2
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+]
