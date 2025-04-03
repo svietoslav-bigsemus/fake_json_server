@@ -37,12 +37,11 @@ server.post('/auth/login', (req, res) => {
     const findDescendants = (node) => {
         const result = { ...node };
         delete result.password;
+
         if (node.children) {
-            result.children = node.children.map(child => {
-                const fullChild = users.find(u => u.id === child.id);
-                return findDescendants(fullChild || child);
-            });
+            result.children = node.children.map(child => findDescendants(child));
         }
+
         return result;
     };
 
