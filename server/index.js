@@ -59,6 +59,46 @@ server.post('/auth/login', (req, res) => {
     res.json(userWithChildren);
 });
 
+// Custom GET endpoint to return user by ID with all nested children
+server.get('/user-tree/:id', (req, res) => {
+    const db = router.db;
+    const users = db.get('users').value();
+    const { id } = req.params;
+
+    const findUserRecursively = (list, targetId) => {
+        for (const user of list) {
+            if (user.id === targetId) return user;
+            if (user.children && Array.isArray(user.children)) {
+                const found = findUserRecursively(user.children, targetId);
+                if (found) return found;
+            }
+        }
+        return null;
+    };
+
+    const findDescendants = (node) => {
+        const result = { ...node };
+        delete result.password;
+
+        if (node.children && Array.isArray(node.children)) {
+            result.children = node.children.map(child => {
+                const fullChild = findUserRecursively(users, child.id);
+                return fullChild ? findDescendants(fullChild) : child;
+            });
+        }
+
+        return result;
+    };
+
+    const user = findUserRecursively(users, id);
+    if (!user) {
+        return res.status(404).json({ message: 'User not found' });
+    }
+
+    const userWithChildren = findDescendants(user);
+    res.json(userWithChildren);
+});
+
 server.use(router);
 
 const port = process.env.PORT || 3001
