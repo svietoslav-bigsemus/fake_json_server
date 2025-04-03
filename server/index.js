@@ -21,13 +21,13 @@ server.post('/auth/login', (req, res) => {
 
     const users = db.get('users').value();
 
-    const findUserRecursively = (nodeList, email, password) => {
-        for (const node of nodeList) {
-            if (node.email === email && node.password === password) {
-                return node;
+    const findUserRecursively = (usersList, email, password) => {
+        for (const user of usersList) {
+            if (user.email === email && user.password === password) {
+                return user;
             }
-            if (node.children) {
-                const found = findUserRecursively(node.children, email, password);
+            if (user.children) {
+                const found = findUserRecursively(user.children, email, password);
                 if (found) return found;
             }
         }
@@ -36,6 +36,7 @@ server.post('/auth/login', (req, res) => {
 
     const findDescendants = (node) => {
         const result = { ...node };
+        delete result.password;
         if (node.children) {
             result.children = node.children.map(child => {
                 const fullChild = users.find(u => u.id === child.id);
