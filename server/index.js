@@ -18,15 +18,18 @@ server.post('/auth/logout', (req, res) => {
 server.post('/auth/login', (req, res) => {
     const db = router.db;
     const { email, password } = req.body;
+    if (!email || !password) {
+        return res.status(400).json({ message: 'Email and password are required' });
+    }
 
     const users = db.get('users').value();
 
-    const findUserRecursively = (usersList, email, password) => {
-        for (const user of usersList) {
+    const findUserRecursively = (userList, email, password) => {
+        for (const user of userList) {
             if (user.email === email && user.password === password) {
                 return user;
             }
-            if (user.children) {
+            if (user.children && Array.isArray(user.children)) {
                 const found = findUserRecursively(user.children, email, password);
                 if (found) return found;
             }
@@ -38,7 +41,7 @@ server.post('/auth/login', (req, res) => {
         const result = { ...node };
         delete result.password;
 
-        if (node.children) {
+        if (node.children && Array.isArray(node.children)) {
             result.children = node.children.map(child => findDescendants(child));
         }
 
@@ -52,6 +55,7 @@ server.post('/auth/login', (req, res) => {
     }
 
     const userWithChildren = findDescendants(user);
+    console.log(`✅ User ${email} logged in`);
     res.json(userWithChildren);
 });
 
