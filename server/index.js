@@ -1,17 +1,18 @@
 // index.js
-const jsonServer = require('json-server')
-const path = require('path')
+const jsonServer = require('json-server');
+const path = require('path');
 
-const server = jsonServer.create()
-const router = jsonServer.router(path.join(__dirname, '../db.json'))
-const middlewares = jsonServer.defaults()
+const server = jsonServer.create();
+const router = jsonServer.router(path.join(__dirname, '../db.json'));
+const middlewares = jsonServer.defaults();
 
-server.use(middlewares)
+server.use(middlewares);
+server.use(jsonServer.bodyParser);
 
 // Custom logout endpoint (мнимый)
 server.post('/auth/logout', (req, res) => {
     res.status(200).json({ message: 'Logged out successfully' })
-})
+});
 
 // Custom login endpoint: returns user and all descendants by email/password
 server.post('/auth/login', (req, res) => {
@@ -54,9 +55,9 @@ server.post('/auth/login', (req, res) => {
     res.json(userWithChildren);
 });
 
-server.use(router)
+server.use(router);
 
 const port = process.env.PORT || 3001
 server.listen(port, () => {
     console.log(`🚀 JSON Server is running on port ${port}`)
-})
+});
